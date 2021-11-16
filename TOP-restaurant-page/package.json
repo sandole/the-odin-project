@@ -1,0 +1,26 @@
+{
+  "name": "top-restaurant-page",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
+  },
+  "main": "webpack.config.js",
+  "bugs": {
+    "url": "https://github.com/sandole/TOP-restaurant-page/issues"
+  },
+  "homepage": "https://github.com/sandole/TOP-restaurant-page",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}

@@ -1,0 +1,541 @@
+:root {
+  --mailchimp-teal: #007c89;
+  --inactive-gray: #c5c3c2;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+}
+
+body {
+  background-color: #ffe01b;
+  color: black;
+  margin: 0%;
+  font-family: Roboto, Helvetica, Arial, Verdana, sans-serif;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  height: 100%;
+}
+
+.sideArt {
+  height: 100%;
+}
+
+/* structure */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.content-left {
+  padding: 4rem 14%;
+  background-color: white;
+  margin-left: 9px;
+  margin-right: 0;
+  position: relative;
+  min-height: 100vh;
+  width: min-content;
+}
+
+.content-right {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* form */
+.form-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: white;
+  padding: 0px 15px;
+  min-width: 600px;
+  max-width: 60%;
+}
+
+.logo {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 10px;
+  left: 20px;
+  z-index: 100;
+}
+
+.form-header {
+  font-size: 48px;
+  font-family: "Karma", serif;
+  letter-spacing: -1px;
+  line-height: 50px;
+  margin-bottom: 15px;
+}
+
+.pre-form-text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.blue-text {
+  color: var(--mailchimp-teal);
+  cursor: pointer;
+}
+.blue-text-no-effect {
+  color: var(--mailchimp-teal);
+}
+.blue-text:hover {
+  color: black;
+}
+
+.underline-text {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.underline-text:hover {
+  color: black;
+}
+
+/* form */
+.form-input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0px;
+  position: relative;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  padding-bottom: 12px;
+}
+
+.form-input {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 18px;
+  padding: 0px 15px;
+  min-height: 46px;
+  min-width: 50px;
+  outline-color: var(--mailchimp-teal);
+  border: solid 1px rgb(170, 170, 170);
+  border-radius: px;
+}
+
+.username-tip {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 7px;
+  color: gray;
+  position: absolute;
+  opacity: 0;
+}
+
+#signup-username:focus + .username-tip {
+  transition: linear 0.2s;
+  position: static;
+  opacity: 1;
+}
+
+.show-hide-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75px;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.show-hide-icon {
+  height: 24px;
+  width: 24px;
+  image-rendering: crisp-edges;
+}
+
+.show-hide-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--mailchimp-teal);
+}
+
+/* password requirements */
+.password-requirements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-height: 200px;
+  padding-left: 20px;
+}
+
+.password-requirements-ul {
+  font-weight: 100;
+}
+
+.password-requirements-li-false {
+  list-style: none; /* Remove default bullets */
+}
+
+.password-requirements-li-false::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--mailchimp-teal); /* Change the color */
+  font-weight: 900; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 20px; /* Also needed for space (tweak if needed) */
+  margin-left: -20px; /* Also needed for space (tweak if needed) */
+  font-size: 34px;
+  line-height: 26px;
+  vertical-align: middle;
+}
+
+.password-requirements-li-true {
+  list-style: none; /* Remove default bullets */
+}
+
+.password-requirements-li-true::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--inactive-gray); /* Change the color */
+  font-weight: 900; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 20px; /* Also needed for space (tweak if needed) */
+  margin-left: -20px; /* Also needed for space (tweak if needed) */
+  font-size: 34px;
+  line-height: 26px;
+  vertical-align: middle;
+}
+
+.password-requirements-span-false {
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+}
+
+.password-requirements-span-true {
+  font-family: "Quicksand", sans-serif;
+  color: var(--inactive-gray);
+  font-size: 15px;
+}
+
+.password-passes-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.password-passes-check {
+  background-color: #d8eacc;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 2px;
+}
+.checkCircle {
+  height: 22px;
+  width: 22px;
+  margin-right: 15px;
+}
+
+/* signup button */
+.signup-submit-container {
+  display: flex;
+  margin-top: 35px;
+}
+
+.signup-button-false {
+  background-color: transparent;
+  border: solid 1px var(--inactive-gray);
+  color: var(--inactive-gray);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 40px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Roboto;
+  border-radius: 2px;
+  align-self: flex-start;
+  pointer-events: none;
+}
+
+.signup-button-true {
+  background-color: var(--mailchimp-teal);
+  border: solid 1px var(--mailchimp-teal);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 40px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Roboto;
+  border-radius: 2px;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: linear background-color 0.2s;
+}
+
+.signup-button-true:hover {
+  background-color: #005a64;
+}
+
+.email-updates-checkbox-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 25px;
+}
+
+.email-updates-checkbox-container span {
+  margin-left: 15px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+}
+
+/* checkbox */
+label {
+  display: inline;
+}
+
+.regular-checkbox {
+  display: none;
+}
+
+.regular-checkbox + label {
+  background-color: white;
+  border: 1.5px solid #bdbdbd;
+  padding: 10px;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.regular-checkbox:checked + label {
+  background-color: var(--mailchimp-teal);
+  border: 1.5px solid var(--mailchimp-teal);
+  color: white;
+}
+
+.regular-checkbox:checked + label:after {
+  content: "\2714";
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  color: white;
+}
+
+/* bottom of page */
+.tos-div {
+  font-size: 14px;
+  font-family: "Quicksand", sans-serif;
+  padding: 42px 0px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10px;
+  left: 16px;
+  color: gray;
+  font-size: 12px;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  z-index: 101;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  position: relative;
+  height: auto;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0px;
+}
+
+.modal-logo {
+  height: 80px;
+  width: 80px;
+}
+
+.modal-thank-you {
+  font-size: 40px;
+  padding: 18px;
+  font-family: "Karma", serif;
+  pointer-events: none;
+  text-align: center;
+  line-height: 45px;
+}
+
+.modal-message {
+  padding: 0px 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 25px;
+  pointer-events: none;
+}
+
+.modal-button {
+  background-color: var(--mailchimp-teal);
+  border: solid 1px var(--mailchimp-teal);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 40px;
+  margin-top: 20px;
+  text-align: center;
+  font-family: Roboto;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: linear background-color 0.2s;
+}
+
+.modal-button:hover {
+  background-color: #005a64;
+}
+
+/* media queries */
+@media only screen and (max-width: 1400px) {
+  .content-left {
+    padding: 4rem 13%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .content-left {
+    padding: 4rem 12%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .content-left {
+    padding: 4rem 11%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .content-left {
+    padding: 4rem 10%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .content {
+    position: relative;
+    display: block;
+  }
+  .content-left {
+    padding: 4rem 0px;
+    background-color: white;
+    margin-left: 9px;
+    margin-right: 0;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-content {
+    margin: 0px auto;
+    padding: 0px 20px;
+  }
+  .form-header {
+    text-align: center;
+  }
+  .content-right {
+    margin: 0px;
+    padding: 0px;
+    display: none;
+  }
+
+  .signup-submit-container {
+    flex-direction: column-reverse;
+  }
+
+  .signup-button-false {
+    margin: auto;
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .signup-button-true {
+    margin: auto;
+    margin-top: 50px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .content {
+    position: relative;
+    display: block;
+    margin-top: 9px;
+  }
+  .content-left {
+    padding: 4rem 0px;
+    background-color: white;
+    margin-right: 0;
+    margin-left: 0px;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-content {
+    min-width: fit-content;
+    width: fit-content;
+    margin: 0px auto;
+  }
+  .form-header {
+    text-align: center;
+  }
+  .content-right {
+    margin: 0px;
+    padding: 0px;
+    display: none;
+  }
+  .signup-submit-container {
+    flex-direction: column-reverse;
+  }
+  .signup-button-false {
+    margin: auto;
+    margin-top: 50px;
+    width: 100%;
+  }
+  .signup-button-true {
+    margin: auto;
+    margin-top: 50px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .password-requirements {
+    display: flex;
+    flex-direction: column;
+  }
+}

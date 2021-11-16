@@ -1,0 +1,23 @@
+.bial {
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.bagel {
+    height: auto;
+    width: 500px;
+}
+
+.head {
+    font-size: 40px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+body.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
